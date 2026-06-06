@@ -4,6 +4,8 @@ description: "We tested the top golf GPS watches on the market. Here's our hones
 pubDate: "2026-06-05"
 category: "GPS Watches"
 featured: true
+image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800&q=80&auto=format&fit=crop"
+imageAlt: "Golf GPS watch on a golfer's wrist on the course"
 ---
 
 *Affiliate disclosure: This article contains affiliate links. If you buy through our links, we may earn a commission at no extra cost to you. [Full disclosure →](/affiliate-disclosure)*

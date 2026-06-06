@@ -8,13 +8,14 @@ import { getCollection } from 'astro:content';
 const allArticles = await getCollection('articles');
 const sortedArticles = allArticles.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const featuredArticles = sortedArticles.filter(a => a.data.featured);
-const recentArticles = sortedArticles.slice(0, 6);
+const featuredSlugs = new Set(featuredArticles.map(a => a.slug));
+const recentArticles = sortedArticles.filter(a => !featuredSlugs.has(a.slug)).slice(0, 6);
 
 const categories = [
-  { name: 'GPS Watches', icon: '⌚', desc: 'Know your yardage at a glance' },
-  { name: 'Rangefinders', icon: '🔭', desc: 'Laser-accurate distance to the pin' },
-  { name: 'Launch Monitors', icon: '📡', desc: 'Full shot data for serious practice' },
-  { name: 'Simulators', icon: '🏌️', desc: 'Play any course from home' },
+  { name: 'GPS Watches', icon: '⌚', desc: 'Know your yardage at a glance', slug: 'GPS+Watches' },
+  { name: 'Rangefinders', icon: '🔭', desc: 'Laser-accurate distance to the pin', slug: 'Rangefinders' },
+  { name: 'Launch Monitors', icon: '📡', desc: 'Full shot data for serious practice', slug: 'Launch+Monitors' },
+  { name: 'Simulators', icon: '🏌️', desc: 'Play any course from home', slug: 'Golf+Simulators' },
 ];
 
 const courses = [
@@ -110,7 +111,7 @@ const courses = [
       <h2 class="section-title">Browse by category</h2>
       <div class="categories-grid">
         {categories.map(cat => (
-          <a href="/articles" class="category-card">
+          <a href={`/articles?category=${cat.slug}`} class="category-card">
             <span class="cat-icon">{cat.icon}</span>
             <span class="cat-name">{cat.name}</span>
             <span class="cat-desc">{cat.desc}</span>
@@ -134,6 +135,8 @@ const courses = [
               category={article.data.category}
               pubDate={article.data.pubDate}
               featured={true}
+              image={article.data.image}
+              imageAlt={article.data.imageAlt}
             />
           ))}
         </div>
@@ -156,8 +159,26 @@ const courses = [
             slug={article.slug}
             category={article.data.category}
             pubDate={article.data.pubDate}
+            image={article.data.image}
+            imageAlt={article.data.imageAlt}
           />
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Capture -->
+  <section class="email-section">
+    <div class="container">
+      <div class="email-inner">
+        <div class="email-text">
+          <h2>New reviews, straight to your inbox</h2>
+          <p>No fluff, no spam. Just honest gear reviews when we publish them — once or twice a month.</p>
+        </div>
+        <form class="email-form" action="https://buttondown.email/api/emails/embed-subscribe/formxgolf" method="post" target="_blank">
+          <input type="email" name="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe →</button>
+        </form>
       </div>
     </div>
   </section>
@@ -316,6 +337,39 @@ const courses = [
   /* Articles */
   .articles-section { padding: 3rem 0; }
   .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+  /* Email Capture */
+  .email-section { background: #1B5E20; padding: 3.5rem 0; }
+  .email-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .email-text h2 { font-size: 1.4rem; font-weight: 800; color: #fff; margin: 0 0 0.4rem; }
+  .email-text p { font-size: 0.95rem; color: rgba(255,255,255,0.8); margin: 0; }
+  .email-form { display: flex; gap: 0.5rem; flex-shrink: 0; }
+  .email-form input[type="email"] {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.95rem;
+    width: 260px;
+    outline: none;
+  }
+  .email-form button {
+    padding: 0.75rem 1.25rem;
+    background: #F9A825;
+    color: #111;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .email-form button:hover { background: #F57F17; }
+  @media (max-width: 700px) {
+    .email-inner { flex-direction: column; align-items: flex-start; }
+    .email-form { width: 100%; }
+    .email-form input[type="email"] { flex: 1; width: auto; }
+  }
 
   /* CTA Banner */
   .cta-banner { background: #E8F5E9; padding: 4rem 0; margin-top: 2rem; }

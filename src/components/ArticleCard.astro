@@ -6,17 +6,26 @@ interface Props {
   category: string;
   pubDate: Date;
   featured?: boolean;
+  image?: string;
+  imageAlt?: string;
 }
-const { title, description, slug, category, pubDate, featured = false } = Astro.props;
+const { title, description, slug, category, pubDate, featured = false, image, imageAlt } = Astro.props;
 const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 ---
 <a href={`/articles/${slug}`} class={`card ${featured ? 'card--featured' : ''}`}>
-  <div class="card-category">{category}</div>
-  <h2 class="card-title">{title}</h2>
-  <p class="card-desc">{description}</p>
-  <div class="card-meta">
-    <span class="card-date">{formattedDate}</span>
-    <span class="card-cta">Read review →</span>
+  {image && (
+    <div class="card-image">
+      <img src={image} alt={imageAlt || title} loading="lazy" />
+    </div>
+  )}
+  <div class="card-body">
+    <div class="card-category">{category}</div>
+    <h2 class="card-title">{title}</h2>
+    <p class="card-desc">{description}</p>
+    <div class="card-meta">
+      <span class="card-date">{formattedDate}</span>
+      <span class="card-cta">Read review →</span>
+    </div>
   </div>
 </a>
 
@@ -26,7 +35,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', mon
     background: #fff;
     border: 1px solid #e8e8e8;
     border-radius: 10px;
-    padding: 1.75rem;
+    overflow: hidden;
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
@@ -39,32 +48,49 @@ const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', mon
   .card--featured {
     border-left: 4px solid #1B5E20;
   }
+  .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .card:hover .card-image img {
+    transform: scale(1.04);
+  }
+  .card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
   .card-category {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #1B5E20;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
   .card-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #111;
-    margin: 0 0 0.6rem;
-    line-height: 1.4;
+    margin: 0 0 0.5rem;
+    line-height: 1.35;
   }
   .card-desc {
-    font-size: 0.9rem;
+    font-size: 0.87rem;
     color: #555;
     line-height: 1.6;
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.1rem;
   }
   .card-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .card-date { font-size: 0.8rem; color: #999; }
-  .card-cta { font-size: 0.85rem; font-weight: 600; color: #1B5E20; }
+  .card-date { font-size: 0.78rem; color: #999; }
+  .card-cta { font-size: 0.83rem; font-weight: 600; color: #1B5E20; }
 </style>

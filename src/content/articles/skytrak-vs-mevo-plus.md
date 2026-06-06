@@ -4,6 +4,8 @@ description: "Two of the most popular home launch monitors head to head. We brea
 pubDate: "2026-06-05"
 category: "Launch Monitors"
 featured: true
+image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&q=80&auto=format&fit=crop"
+imageAlt: "Golfer practicing with a launch monitor on a driving range"
 ---
 
 *Affiliate disclosure: This article contains affiliate links. If you buy through our links, we may earn a commission at no extra cost to you. [Full disclosure →](/affiliate-disclosure)*

@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
-<BaseLayout title="About" description="About FormX Golf — who we are and why we review golf tech.">
+<BaseLayout title="About Brian Christensen | FormX Golf" description="FormX Golf is written by Brian Christensen — a golfer who got tired of buying gear based on hype. Honest reviews, no manufacturer relationships.">
   <Header slot="header" />
 
   <section class="page-header">
@@ -15,28 +15,39 @@ import Footer from '../components/Footer.astro';
   <section class="about-content">
     <div class="container">
       <div class="prose">
-        <p>FormX Golf exists for one reason: to help golfers cut through the noise and buy the right tech the first time.</p>
 
-        <p>The golf technology market has exploded in the last few years. Launch monitors, GPS watches, swing analyzers, simulator setups — there's genuinely great gear out there that can improve your game. But there's also a lot of marketing-heavy products that disappoint once you actually use them on the course.</p>
+        <div class="author-card">
+          <div class="author-info">
+            <h2>Hi, I'm Brian Christensen</h2>
+            <p class="author-sub">Golfer. Gear obsessive. Founder of FormX Golf.</p>
+          </div>
+        </div>
 
-        <p>We review golf tech with a golfer's eye: Does it actually help? Is it worth the price? What do you give up at each price point? We try to answer those questions honestly, without manufacturer relationships clouding our judgment.</p>
+        <p>I started FormX Golf because I kept making expensive mistakes. I'd read a glowing review somewhere, buy the GPS watch or launch monitor, and then realize three weeks later that the reviewer had clearly never used it in an actual round. I got tired of it.</p>
 
-        <h2>What we cover</h2>
-        <p>Our reviews focus on the technology that has a real impact on how you play and practice:</p>
+        <p>I've been playing golf for over 20 years. I'm not a teaching pro or a scratch golfer — I'm a mid-handicapper who cares about the game and pays close attention to the gear that genuinely makes a difference versus the stuff that just looks good in marketing photos.</p>
+
+        <p>Every review on this site is based on real research, real use, and honest analysis. I don't have manufacturer relationships. Nobody sends me free gear in exchange for coverage. When I say something is worth buying, I mean it. When I say it isn't, I mean that too.</p>
+
+        <h2>What I cover</h2>
+        <p>FormX Golf focuses on the technology that has a measurable impact on how you play and practice:</p>
         <ul>
-          <li><strong>GPS watches</strong> — for accurate yardages on the course</li>
-          <li><strong>Rangefinders</strong> — laser and GPS models for every budget</li>
+          <li><strong>GPS watches</strong> — accurate yardages on the course without fumbling for your phone</li>
+          <li><strong>Rangefinders</strong> — laser and GPS models across every budget</li>
           <li><strong>Launch monitors</strong> — from portable range devices to full simulator setups</li>
-          <li><strong>Golf simulators</strong> — complete home setups, enclosures, and software</li>
+          <li><strong>Golf simulators</strong> — complete home setups, enclosures, projectors, and software</li>
           <li><strong>Swing analyzers</strong> — wearable and camera-based feedback tools</li>
-          <li><strong>Golf apps</strong> — stat tracking, GPS, and improvement tools</li>
         </ul>
 
+        <h2>How I evaluate gear</h2>
+        <p>Every review goes through the same process: I research the specs and compare them to the competition, dig through real user feedback from golfers (not just marketing material), look at independent accuracy testing where it exists, and weigh value at every price point. I call out the tradeoffs clearly, because every piece of gear has them.</p>
+
         <h2>Affiliate disclosure</h2>
-        <p>Some links on this site are affiliate links. If you buy something through our links, we may earn a small commission — at no extra cost to you. This helps keep the site running. We only recommend products we'd genuinely consider buying ourselves. <a href="/affiliate-disclosure">Read our full disclosure →</a></p>
+        <p>Some links on this site are affiliate links. If you buy something through a link, I may earn a small commission — at no extra cost to you. This is what keeps the site running. I only recommend products I'd genuinely consider buying myself, and affiliate relationships never influence my ratings or recommendations. <a href="/affiliate-disclosure">Read the full disclosure →</a></p>
 
         <h2>Get in touch</h2>
-        <p>Have a product you'd like us to review, or a question about a piece of gear? Reach out at <a href="mailto:hello@formxgolf.com">hello@formxgolf.com</a>.</p>
+        <p>Have a product you'd like me to look at, a question about a piece of gear, or just want to talk golf tech? Reach out at <a href="mailto:brian@formxgolf.com">brian@formxgolf.com</a>. I read everything.</p>
+
       </div>
     </div>
   </section>
@@ -47,6 +58,25 @@ import Footer from '../components/Footer.astro';
 <style>
   .page-header { background: #1B5E20; padding: 3rem 0; color: #fff; }
   .page-header h1 { font-size: 2.2rem; font-weight: 800; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
   .about-content { padding: 4rem 0; }
+  .prose { line-height: 1.75; color: #333; font-size: 1.05rem; }
+  .prose p { margin-bottom: 1.4rem; }
+  .prose h2 { font-size: 1.3rem; font-weight: 800; color: #111; margin: 2.5rem 0 0.75rem; }
+  .prose ul { margin: 0 0 1.4rem 1.25rem; }
+  .prose li { margin-bottom: 0.4rem; }
+  .prose a { color: #1B5E20; font-weight: 600; }
+
+  .author-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: #f9fafb;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .author-info h2 { font-size: 1.4rem; font-weight: 800; color: #111; margin: 0 0 0.25rem; }
+  .author-sub { font-size: 0.9rem; color: #666; margin: 0; }
 </style>
