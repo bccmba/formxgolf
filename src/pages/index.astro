@@ -1,12 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
-const articles = await getCollection('articles');
-const sortedArticles = articles.sort((a, b) =>
-  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
-);
+const allArticles = await getCollection('articles');
+const sortedArticles = allArticles.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featuredArticles = sortedArticles.filter(a => a.data.featured);
+const recentArticles = sortedArticles.slice(0, 6);
+
+const categories = [
+  { name: 'GPS Watches', icon: '⌚', desc: 'Know your yardage at a glance' },
+  { name: 'Rangefinders', icon: '🔭', desc: 'Laser-accurate distance to the pin' },
+  { name: 'Launch Monitors', icon: '📡', desc: 'Full shot data for serious practice' },
+  { name: 'Simulators', icon: '🏌️', desc: 'Play any course from home' },
+];
 
 const courses = [
   {
@@ -35,27 +44,74 @@ const courses = [
   },
 ];
 ---
+<BaseLayout title="Golf Tech & Gear Reviews" description="Honest reviews of golf tech and gear — GPS watches, rangefinders, launch monitors, and simulator setups to help you play better.">
+  <Header slot="header" />
 
-<BaseLayout title="FormX Golf — Golf Gear Reviews, Tips & Tech">
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Play better golf.<br />Buy smarter gear.</h1>
-      <p>
-        Independent reviews of launch monitors, simulators, GPS watches, and everything else
-        you need to take your game seriously — without the fluff.
-      </p>
-      <a href="/articles" class="btn-primary">Browse All Reviews</a>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Golf Tech Reviews</div>
+        <h1>The gear that actually improves your game</h1>
+        <p>Honest, no-fluff reviews of GPS watches, rangefinders, launch monitors, and simulator setups. We cut through the marketing so you buy the right thing.</p>
+        <a href="/articles" class="btn-primary">Browse all reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">Browse by category</h2>
+      <div class="categories-grid">
+        {categories.map(cat => (
+          <a href="/articles" class="category-card">
+            <span class="cat-icon">{cat.icon}</span>
+            <span class="cat-name">{cat.name}</span>
+            <span class="cat-desc">{cat.desc}</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
   <!-- Featured Articles -->
+  {featuredArticles.length > 0 && (
+    <section class="articles-section">
+      <div class="container">
+        <h2 class="section-title">Featured Reviews</h2>
+        <div class="articles-grid">
+          {featuredArticles.map(article => (
+            <ArticleCard
+              title={article.data.title}
+              description={article.data.description}
+              slug={article.slug}
+              category={article.data.category}
+              pubDate={article.data.pubDate}
+              featured={true}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Recent Articles -->
   <section class="articles-section">
     <div class="container">
-      <h2>Latest Reviews & Guides</h2>
+      <div class="section-header">
+        <h2 class="section-title">Latest Reviews</h2>
+        <a href="/articles" class="view-all">View all →</a>
+      </div>
       <div class="articles-grid">
-        {sortedArticles.map((article) => (
-          <ArticleCard article={article} />
+        {recentArticles.map(article => (
+          <ArticleCard
+            title={article.data.title}
+            description={article.data.description}
+            slug={article.slug}
+            category={article.data.category}
+            pubDate={article.data.pubDate}
+          />
         ))}
       </div>
     </div>
@@ -64,19 +120,13 @@ const courses = [
   <!-- Famous Courses Showcase -->
   <section class="courses-section">
     <div class="container">
-      <h2>Golf's Greatest Courses</h2>
-      <p class="section-subtitle">
-        From links to desert to coastline — the courses every golfer dreams of playing.
-      </p>
+      <h2 class="section-title">Golf's Greatest Courses</h2>
+      <p class="section-subtitle">From links to desert to coastline — the courses every golfer dreams of playing.</p>
       <div class="courses-grid">
         {courses.map((course) => (
           <div class="course-card">
             <div class="course-image-wrap">
-              <img
-                src={course.image}
-                alt={course.name}
-                loading="lazy"
-              />
+              <img src={course.image} alt={course.name} loading="lazy" />
             </div>
             <div class="course-info">
               <h3>{course.name}</h3>
@@ -89,165 +139,130 @@ const courses = [
     </div>
   </section>
 
-  <!-- Newsletter / CTA -->
-  <section class="cta-section">
-    <div class="container cta-inner">
-      <h2>Get gear picks sent to your inbox</h2>
-      <p>No spam. Just honest reviews when we publish something worth reading.</p>
-      <a href="mailto:hello@formxgolf.com?subject=Newsletter Signup" class="btn-primary">
-        Sign Up Free
-      </a>
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Not sure where to start?</h2>
+        <p>If you only read one thing, read our guide to the best GPS watches — it covers every price point and will save you from a bad purchase.</p>
+        <a href="/articles/best-golf-gps-watches-2026" class="btn-primary">Read the GPS watch guide →</a>
+      </div>
     </div>
   </section>
+
+  <Footer slot="footer" />
 </BaseLayout>
 
 <style>
-  /* ---- Hero ---- */
+  /* Hero */
   .hero {
-    background: linear-gradient(135deg, #1a3a2a 0%, #2d6a4f 60%, #40916c 100%);
-    color: white;
-    padding: 5rem 1.5rem;
-    text-align: center;
+    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 60%, #388E3C 100%);
+    padding: 5rem 0 4rem;
+    color: #fff;
   }
-  .hero-content {
-    max-width: 680px;
-    margin: 0 auto;
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
   }
   .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
-    line-height: 1.15;
+    max-width: 640px;
     margin-bottom: 1.25rem;
-    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
   .hero p {
-    font-size: 1.15rem;
-    opacity: 0.9;
+    font-size: 1.1rem;
+    max-width: 560px;
+    opacity: 0.88;
     margin-bottom: 2rem;
-    line-height: 1.6;
+    line-height: 1.7;
   }
   .btn-primary {
     display: inline-block;
-    background: #d4af37;
-    color: #1a1a1a;
-    padding: 0.8rem 2rem;
+    background: #F9A825;
+    color: #111;
+    padding: 0.8rem 1.75rem;
     border-radius: 6px;
-    font-weight: 700;
-    font-size: 1rem;
     text-decoration: none;
-    transition: background 0.2s;
-  }
-  .btn-primary:hover {
-    background: #c49a2a;
-  }
-
-  /* ---- Shared Container ---- */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  /* ---- Articles ---- */
-  .articles-section {
-    padding: 4rem 1.5rem;
-    background: #f9fafb;
-  }
-  .articles-section h2,
-  .courses-section h2 {
-    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #1a3a2a;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.2s;
   }
-  .articles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.75rem;
-    margin-top: 2rem;
-  }
+  .btn-primary:hover { background: #F57F17; transform: translateY(-1px); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-  /* ---- Courses ---- */
-  .courses-section {
-    padding: 4rem 1.5rem;
+  /* Categories */
+  .categories { padding: 4rem 0 1rem; }
+  .section-title { font-size: 1.5rem; font-weight: 800; color: #111; margin-bottom: 1.5rem; }
+  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  .view-all { font-size: 0.9rem; font-weight: 600; color: #1B5E20; text-decoration: none; }
+  .categories-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    padding: 1.25rem;
     background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .section-subtitle {
-    color: #555;
-    font-size: 1.05rem;
-    margin-bottom: 2.5rem;
-    margin-top: 0.25rem;
-  }
-  .courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1.5rem;
-  }
+  .category-card:hover { border-color: #1B5E20; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .cat-icon { font-size: 1.5rem; }
+  .cat-name { font-weight: 700; font-size: 0.95rem; color: #111; }
+  .cat-desc { font-size: 0.82rem; color: #777; }
+
+  /* Articles */
+  .articles-section { padding: 3rem 0; }
+  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+  /* Courses */
+  .courses-section { padding: 4rem 0; background: #f9fafb; }
+  .section-subtitle { color: #555; font-size: 1rem; margin-top: -0.75rem; margin-bottom: 2rem; }
+  .courses-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
   .course-card {
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
     background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .course-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
-  }
-  .course-image-wrap {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-  }
-  .course-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s;
-  }
-  .course-card:hover .course-image-wrap img {
-    transform: scale(1.05);
-  }
-  .course-info {
-    padding: 1.1rem 1.25rem 1.4rem;
-  }
-  .course-info h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin: 0 0 0.25rem;
-    color: #1a3a2a;
-  }
-  .course-location {
-    font-size: 0.8rem;
-    color: #888;
-    display: block;
-    margin-bottom: 0.6rem;
-  }
-  .course-info p {
-    font-size: 0.875rem;
-    color: #444;
-    line-height: 1.55;
-    margin: 0;
-  }
+  .course-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .course-image-wrap { width: 100%; aspect-ratio: 16 / 10; overflow: hidden; }
+  .course-image-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .course-card:hover .course-image-wrap img { transform: scale(1.05); }
+  .course-info { padding: 1rem 1.1rem 1.25rem; }
+  .course-info h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 0.2rem; color: #111; }
+  .course-location { font-size: 0.78rem; color: #888; display: block; margin-bottom: 0.5rem; }
+  .course-info p { font-size: 0.82rem; color: #555; line-height: 1.55; margin: 0; }
 
-  /* ---- CTA ---- */
-  .cta-section {
-    background: linear-gradient(135deg, #1a3a2a, #2d6a4f);
-    color: white;
-    padding: 4rem 1.5rem;
-    text-align: center;
+  /* CTA Banner */
+  .cta-banner { background: #E8F5E9; padding: 4rem 0; margin-top: 2rem; }
+  .cta-content { max-width: 600px; }
+  .cta-content h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.75rem; color: #1B5E20; }
+  .cta-content p { color: #444; margin-bottom: 1.5rem; line-height: 1.7; }
+
+  @media (max-width: 900px) {
+    .articles-grid { grid-template-columns: repeat(2, 1fr); }
+    .categories-grid { grid-template-columns: repeat(2, 1fr); }
+    .courses-grid { grid-template-columns: repeat(2, 1fr); }
   }
-  .cta-inner {
-    max-width: 600px;
-  }
-  .cta-section h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-  }
-  .cta-section p {
-    opacity: 0.85;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+  @media (max-width: 600px) {
+    .articles-grid { grid-template-columns: 1fr; }
+    .categories-grid { grid-template-columns: 1fr 1fr; }
+    .courses-grid { grid-template-columns: 1fr; }
   }
 </style>
