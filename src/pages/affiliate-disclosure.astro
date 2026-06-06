@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Affiliate Disclosure" description="FormX Golf affiliate disclosure and editorial policy.">
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Affiliate Disclosure</h1>
+    </div>
+  </section>
+
+  <section class="disclosure-content">
+    <div class="container">
+      <div class="prose">
+        <p><strong>Last updated: June 2026</strong></p>
+
+        <p>FormX Golf participates in affiliate marketing programs, including the Amazon Associates Program and other affiliate programs. This means we may earn a commission when you click a link on our site and make a purchase — at no additional cost to you.</p>
+
+        <h2>How it works</h2>
+        <p>When we include a link to a product, that link may contain a tracking code that tells the retailer (Amazon, Golf Galaxy, Rain or Shine Golf, etc.) that the referral came from FormX Golf. If you complete a purchase, we receive a small percentage of the sale price as a commission.</p>
+
+        <h2>Our editorial policy</h2>
+        <p>Affiliate commissions do not influence our reviews. We only recommend products we believe are genuinely worth buying. If a product isn't good, we say so — we'd rather lose a commission than send a reader toward a bad purchase.</p>
+        <p>Products are reviewed based on their merits: accuracy, value, ease of use, and relevance to golfers at different levels and budgets.</p>
+
+        <h2>Programs we participate in</h2>
+        <ul>
+          <li>Amazon Associates Program</li>
+          <li>Golf Galaxy Affiliate Program (via Commission Junction)</li>
+          <li>Rain or Shine Golf Affiliate Program</li>
+          <li>Garmin Affiliate Program</li>
+          <li>Bushnell Affiliate Program</li>
+          <li>Other golf and technology affiliate programs</li>
+        </ul>
+
+        <h2>Questions?</h2>
+        <p>If you have any questions about our affiliate relationships or editorial policy, contact us at <a href="mailto:hello@formxgolf.com">hello@formxgolf.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-header { background: #1B5E20; padding: 3rem 0; color: #fff; }
+  .page-header h1 { font-size: 2.2rem; font-weight: 800; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .disclosure-content { padding: 4rem 0; }
+</style>

@@ -1,0 +1,96 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo">⛳ FormX<span>Golf</span></a>
+        <p>Honest reviews of golf tech and gear to help you play better.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Site</h4>
+        <a href="/articles">All Reviews</a>
+        <a href="/about">About</a>
+        <a href="/affiliate-disclosure">Affiliate Disclosure</a>
+      </div>
+      <div class="footer-links">
+        <h4>Categories</h4>
+        <a href="/articles">GPS Watches</a>
+        <a href="/articles">Rangefinders</a>
+        <a href="/articles">Launch Monitors</a>
+        <a href="/articles">Simulators</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {year} FormX Golf. All rights reserved.</p>
+      <p>As an Amazon Associate and affiliate partner, we earn from qualifying purchases.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #1B5E20;
+    color: #fff;
+    margin-top: 5rem;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem 0 2rem;
+  }
+  .logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  .logo span { color: #F9A825; }
+  .footer-brand p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-links h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #F9A825;
+    margin-bottom: 0.25rem;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding: 1.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>

@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+const sortedArticles = allArticles.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featuredArticles = sortedArticles.filter(a => a.data.featured);
+const recentArticles = sortedArticles.slice(0, 6);
+
+const categories = [
+  { name: 'GPS Watches', icon: '⌚', desc: 'Know your yardage at a glance' },
+  { name: 'Rangefinders', icon: '🔭', desc: 'Laser-accurate distance to the pin' },
+  { name: 'Launch Monitors', icon: '📡', desc: 'Full shot data for serious practice' },
+  { name: 'Simulators', icon: '🏌️', desc: 'Play any course from home' },
+];
+---
+<BaseLayout title="Golf Tech & Gear Reviews" description="Honest reviews of golf tech and gear — GPS watches, rangefinders, launch monitors, and simulator setups to help you play better.">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Golf Tech Reviews</div>
+        <h1>The gear that actually improves your game</h1>
+        <p>Honest, no-fluff reviews of GPS watches, rangefinders, launch monitors, and simulator setups. We cut through the marketing so you buy the right thing.</p>
+        <a href="/articles" class="btn-primary">Browse all reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">Browse by category</h2>
+      <div class="categories-grid">
+        {categories.map(cat => (
+          <a href="/articles" class="category-card">
+            <span class="cat-icon">{cat.icon}</span>
+            <span class="cat-name">{cat.name}</span>
+            <span class="cat-desc">{cat.desc}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Articles -->
+  {featuredArticles.length > 0 && (
+    <section class="articles-section">
+      <div class="container">
+        <h2 class="section-title">Featured Reviews</h2>
+        <div class="articles-grid">
+          {featuredArticles.map(article => (
+            <ArticleCard
+              title={article.data.title}
+              description={article.data.description}
+              slug={article.slug}
+              category={article.data.category}
+              pubDate={article.data.pubDate}
+              featured={true}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Recent Articles -->
+  <section class="articles-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Latest Reviews</h2>
+        <a href="/articles" class="view-all">View all →</a>
+      </div>
+      <div class="articles-grid">
+        {recentArticles.map(article => (
+          <ArticleCard
+            title={article.data.title}
+            description={article.data.description}
+            slug={article.slug}
+            category={article.data.category}
+            pubDate={article.data.pubDate}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Not sure where to start?</h2>
+        <p>If you only read one thing, read our guide to the best GPS watches — it covers every price point and will save you from a bad purchase.</p>
+        <a href="/articles/best-golf-gps-watches-2026" class="btn-primary">Read the GPS watch guide →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 60%, #388E3C 100%);
+    padding: 5rem 0 4rem;
+    color: #fff;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 560px;
+    opacity: 0.88;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #F9A825;
+    color: #111;
+    padding: 0.8rem 1.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: #F57F17; transform: translateY(-1px); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Categories */
+  .categories { padding: 4rem 0 1rem; }
+  .section-title { font-size: 1.5rem; font-weight: 800; color: #111; margin-bottom: 1.5rem; }
+  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  .view-all { font-size: 0.9rem; font-weight: 600; color: #1B5E20; text-decoration: none; }
+  .categories-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .category-card:hover { border-color: #1B5E20; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .cat-icon { font-size: 1.5rem; }
+  .cat-name { font-weight: 700; font-size: 0.95rem; color: #111; }
+  .cat-desc { font-size: 0.82rem; color: #777; }
+
+  /* Articles */
+  .articles-section { padding: 3rem 0; }
+  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+  /* CTA Banner */
+  .cta-banner { background: #E8F5E9; padding: 4rem 0; margin-top: 2rem; }
+  .cta-content { max-width: 600px; }
+  .cta-content h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.75rem; color: #1B5E20; }
+  .cta-content p { color: #444; margin-bottom: 1.5rem; line-height: 1.7; }
+
+  @media (max-width: 900px) {
+    .articles-grid { grid-template-columns: repeat(2, 1fr); }
+    .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .articles-grid { grid-template-columns: 1fr; }
+    .categories-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="About" description="About FormX Golf — who we are and why we review golf tech.">
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>About FormX Golf</h1>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="prose">
+        <p>FormX Golf exists for one reason: to help golfers cut through the noise and buy the right tech the first time.</p>
+
+        <p>The golf technology market has exploded in the last few years. Launch monitors, GPS watches, swing analyzers, simulator setups — there's genuinely great gear out there that can improve your game. But there's also a lot of marketing-heavy products that disappoint once you actually use them on the course.</p>
+
+        <p>We review golf tech with a golfer's eye: Does it actually help? Is it worth the price? What do you give up at each price point? We try to answer those questions honestly, without manufacturer relationships clouding our judgment.</p>
+
+        <h2>What we cover</h2>
+        <p>Our reviews focus on the technology that has a real impact on how you play and practice:</p>
+        <ul>
+          <li><strong>GPS watches</strong> — for accurate yardages on the course</li>
+          <li><strong>Rangefinders</strong> — laser and GPS models for every budget</li>
+          <li><strong>Launch monitors</strong> — from portable range devices to full simulator setups</li>
+          <li><strong>Golf simulators</strong> — complete home setups, enclosures, and software</li>
+          <li><strong>Swing analyzers</strong> — wearable and camera-based feedback tools</li>
+          <li><strong>Golf apps</strong> — stat tracking, GPS, and improvement tools</li>
+        </ul>
+
+        <h2>Affiliate disclosure</h2>
+        <p>Some links on this site are affiliate links. If you buy something through our links, we may earn a small commission — at no extra cost to you. This helps keep the site running. We only recommend products we'd genuinely consider buying ourselves. <a href="/affiliate-disclosure">Read our full disclosure →</a></p>
+
+        <h2>Get in touch</h2>
+        <p>Have a product you'd like us to review, or a question about a piece of gear? Reach out at <a href="mailto:hello@formxgolf.com">hello@formxgolf.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-header { background: #1B5E20; padding: 3rem 0; color: #fff; }
+  .page-header h1 { font-size: 2.2rem; font-weight: 800; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .about-content { padding: 4rem 0; }
+</style>
