@@ -145,27 +145,29 @@ const courses = [
   )}
 
   <!-- Recent Articles -->
-  <section class="articles-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Latest Reviews</h2>
-        <a href="/articles" class="view-all">View all →</a>
+  {recentArticles.length > 0 && (
+    <section class="articles-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Latest Reviews</h2>
+          <a href="/articles" class="view-all">View all →</a>
+        </div>
+        <div class="articles-grid">
+          {recentArticles.map(article => (
+            <ArticleCard
+              title={article.data.title}
+              description={article.data.description}
+              slug={article.slug}
+              category={article.data.category}
+              pubDate={article.data.pubDate}
+              image={article.data.image}
+              imageAlt={article.data.imageAlt}
+            />
+          ))}
+        </div>
       </div>
-      <div class="articles-grid">
-        {recentArticles.map(article => (
-          <ArticleCard
-            title={article.data.title}
-            description={article.data.description}
-            slug={article.slug}
-            category={article.data.category}
-            pubDate={article.data.pubDate}
-            image={article.data.image}
-            imageAlt={article.data.imageAlt}
-          />
-        ))}
-      </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- Email Capture -->
   <section class="email-section">
