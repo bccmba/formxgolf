@@ -5,7 +5,10 @@ const year = new Date().getFullYear();
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="logo">⛳ FormX<span>Golf</span></a>
+        <a href="/" class="logo">
+          <img src="/formxgolf-logo.svg" alt="FormX Golf" class="logo-img" />
+          <span class="logo-text">FormX<span class="logo-accent">Golf</span></span>
+        </a>
         <p>Honest reviews of golf tech and gear to help you play better.</p>
       </div>
       <div class="footer-links">
@@ -48,14 +51,24 @@ const year = new Date().getFullYear();
     padding: 3rem 0 2rem;
   }
   .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+  }
+  .logo-img {
+    height: 40px;
+    width: 40px;
+    display: block;
+  }
+  .logo-text {
     font-size: 1.3rem;
     font-weight: 800;
     color: #fff;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 0.75rem;
+    letter-spacing: -0.5px;
   }
-  .logo span { color: #F9A825; }
+  .logo-accent { color: #F9A825; }
   .footer-brand p {
     color: rgba(255,255,255,0.7);
     font-size: 0.9rem;
