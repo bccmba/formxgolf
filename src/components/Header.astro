@@ -7,8 +7,7 @@ const navLinks = [
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo">
-      <span class="logo-icon">⛳</span>
-      <span class="logo-text">FormX<span class="logo-accent">Golf</span></span>
+      <img src="/formxgolf-logo.svg" alt="FormX Golf" class="logo-img" />
     </a>
     <nav>
       {navLinks.map(link => (
@@ -38,15 +37,13 @@ const navLinks = [
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
     text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #1B5E20;
-    letter-spacing: -0.5px;
   }
-  .logo-icon { font-size: 1.2rem; }
-  .logo-accent { color: #F9A825; }
+  .logo-img {
+    height: 48px;
+    width: 48px;
+    display: block;
+  }
   nav { display: flex; gap: 2rem; }
   .nav-link {
     text-decoration: none;
