@@ -41,7 +41,7 @@ The S70 is the best golf GPS watch on the market right now, full stop. The 1.4-i
 - $500 is a significant investment
 - Overkill if you just want yardages
 
-[Check the latest price on Amazon →](https://amazon.com)
+[Check the latest price on Amazon →](https://www.amazon.com/s?k=garmin+approach+s70&tag=formxgolf-20)
 
 ---
 
@@ -57,7 +57,7 @@ At around $350, the S62 hits a sweet spot. You get 82% of what the S70 offers at
 
 If you're new to GPS watches and want something you'll actually use for years, start here.
 
-[Check the latest price on Amazon →](https://amazon.com)
+[Check the latest price on Amazon →](https://www.amazon.com/s?k=garmin+approach+s62&tag=formxgolf-20)
 
 ---
 
@@ -67,7 +67,7 @@ At around $200, the iON Elite is the watch we'd recommend to beginners or anyone
 
 Simple to set up, comfortable to wear, and accurate. Not much else to say — it just works.
 
-[Check the latest price on Amazon →](https://amazon.com)
+[Check the latest price on Amazon →](https://www.amazon.com/s?k=bushnell+ion+elite+golf+watch&tag=formxgolf-20)
 
 ---
 
@@ -85,6 +85,6 @@ Simple to set up, comfortable to wear, and accurate. Not much else to say — it
 
 ## Bottom Line
 
-If budget isn't a concern: **Garmin Approach S70**. If you want great value: **Garmin Approach S62**. Just starting out: **Bushnell iON Elite**.
+If budget isn't a concern: [**Garmin Approach S70**](https://www.amazon.com/s?k=garmin+approach+s70&tag=formxgolf-20). If you want great value: [**Garmin Approach S62**](https://www.amazon.com/s?k=garmin+approach+s62&tag=formxgolf-20). Just starting out: [**Bushnell iON Elite**](https://www.amazon.com/s?k=bushnell+ion+elite+golf+watch&tag=formxgolf-20).
 
 Any of these will meaningfully improve your club selection and pace of play. The ROI on a GPS watch — in saved strokes and saved time — is real.
