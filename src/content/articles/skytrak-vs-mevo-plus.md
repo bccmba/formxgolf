@@ -57,15 +57,15 @@ If you want one device that works at home AND at the range: **Mevo Plus**.
 
 Both hover around $2,000–$2,500 depending on the software bundle you choose.
 
-[Check SkyTrak+ current price →](https://rainorshinegolf.com)
-[Check Mevo Plus current price →](https://rainorshinegolf.com)
+[Check SkyTrak+ current price at Rain or Shine Golf →](https://www.rainorshinegolf.com/collections/skytrak)
+[Check Mevo Plus current price on Amazon →](https://www.amazon.com/s?k=flightscope+mevo+plus&tag=formxgolf-20)
 
 ---
 
 ## Bottom Line
 
-For most people building a home simulator: **SkyTrak+**. The software ecosystem is better and it'll be the centerpiece of your setup.
+For most people building a home simulator: [**SkyTrak+**](https://www.rainorshinegolf.com/collections/skytrak). The software ecosystem is better and it'll be the centerpiece of your setup.
 
-If you travel, play outdoors, or want a device you'll take to the range: **Mevo Plus**.
+If you travel, play outdoors, or want a device you'll take to the range: [**Mevo Plus**](https://www.amazon.com/s?k=flightscope+mevo+plus&tag=formxgolf-20).
 
 Either way, you're getting a device that will genuinely improve your game.
