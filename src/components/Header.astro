@@ -8,6 +8,7 @@ const navLinks = [
   <div class="container">
     <a href="/" class="logo">
       <img src="/formxgolf-logo.svg" alt="FormX Golf" class="logo-img" />
+      <span class="logo-text">FormX<span class="logo-accent">Golf</span></span>
     </a>
     <nav>
       {navLinks.map(link => (
@@ -37,13 +38,21 @@ const navLinks = [
   .logo {
     display: flex;
     align-items: center;
+    gap: 0.6rem;
     text-decoration: none;
   }
   .logo-img {
-    height: 48px;
-    width: 48px;
+    height: 44px;
+    width: 44px;
     display: block;
   }
+  .logo-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1B5E20;
+    letter-spacing: -0.5px;
+  }
+  .logo-accent { color: #F9A825; }
   nav { display: flex; gap: 2rem; }
   .nav-link {
     text-decoration: none;
