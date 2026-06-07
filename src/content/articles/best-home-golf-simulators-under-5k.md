@@ -43,7 +43,7 @@ The Mevo+ has earned its reputation as the king of the value segment. For around
 - Requires 8–10 feet behind the ball for radar tracking
 - Not ideal for very tight spaces
 
-[Check current price on FlightScope →](https://www.flightscope.com)
+[Check current price on Amazon →](https://www.amazon.com/s?k=flightscope+mevo+plus&tag=formxgolf-20)
 
 ---
 
@@ -77,17 +77,17 @@ At $599, the R10 is the easiest way to get into simulator golf without breaking 
 - Less accurate than radar or photometric units
 - Club tracking sometimes inconsistent
 
-[Check current price at Golf Galaxy →](https://www.golfgalaxy.com)
+[Check current price on Amazon →](https://www.amazon.com/s?k=garmin+approach+r10&tag=formxgolf-20)
 
 ---
 
 ## Our Recommendation by Budget
 
-**Under $1,500:** Garmin R10 + Rukket net + basic mat.
+**Under $1,500:** [Garmin R10](https://www.amazon.com/s?k=garmin+approach+r10&tag=formxgolf-20) + Rukket net + basic mat.
 
-**$1,500–$3,000:** Mevo+ + Carl's Place net kit + TrueStrike mat. Best combination of accuracy and value.
+**$1,500–$3,000:** [Mevo+](https://www.amazon.com/s?k=flightscope+mevo+plus&tag=formxgolf-20) + Carl's Place net kit + TrueStrike mat. Best combination of accuracy and value.
 
-**$3,000–$5,000:** SkyTrak+ + full projector bay. The closest to a commercial simulator experience under five grand.
+**$3,000–$5,000:** [SkyTrak+](https://www.rainorshinegolf.com/collections/skytrak) + full projector bay. The closest to a commercial simulator experience under five grand.
 
 ---
 
