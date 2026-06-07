@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <path id="bottomArc" d="M 114,232 A 122,122 0 0,0 286,232"/>
+  </defs>
+
+  <!-- outer ring green -->
+  <circle cx="200" cy="200" r="160" fill="none" stroke="#1a3a2a" stroke-width="4"/>
+  <!-- inner ring gold -->
+  <circle cx="200" cy="200" r="140" fill="none" stroke="#d4af37" stroke-width="2.5"/>
+
+  <!-- FX bold sans -->
+  <text x="200" y="215" text-anchor="middle" font-size="115" font-weight="700" fill="#1a3a2a" letter-spacing="-2" font-family="Arial Black, Arial, sans-serif">FX</text>
+
+  <!-- FORMX · GOLF curved along bottom -->
+  <text font-size="20" font-weight="700" fill="#1a3a2a" letter-spacing="3" text-anchor="middle" font-family="Arial, sans-serif">
+    <textPath href="#bottomArc" startOffset="50%">FORMX · GOLF</textPath>
+  </text>
+</svg>
