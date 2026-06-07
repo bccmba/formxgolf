@@ -12,383 +12,395 @@ const featuredSlugs = new Set(featuredArticles.map(a => a.slug));
 const recentArticles = sortedArticles.filter(a => !featuredSlugs.has(a.slug)).slice(0, 6);
 
 const categories = [
-  { name: 'GPS Watches', icon: '⌚', desc: 'Know your yardage at a glance', slug: 'GPS+Watches' },
-  { name: 'Rangefinders', icon: '🔭', desc: 'Laser-accurate distance to the pin', slug: 'Rangefinders' },
-  { name: 'Launch Monitors', icon: '📡', desc: 'Full shot data for serious practice', slug: 'Launch+Monitors' },
-  { name: 'Simulators', icon: '🏌️', desc: 'Play any course from home', slug: 'Golf+Simulators' },
+{ name: 'GPS Watches', icon: '⌚', desc: 'Know your yardage at a glance', slug: 'GPS+Watches' },
+{ name: 'Rangefinders', icon: '🔭', desc: 'Laser-accurate distance to the pin', slug: 'Rangefinders' },
+{ name: 'Launch Monitors', icon: '📡', desc: 'Full shot data for serious practice', slug: 'Launch+Monitors' },
+{ name: 'Simulators', icon: '🏌️', desc: 'Play any course from home', slug: 'Golf+Simulators' },
 ];
 
 const courses = [
-  {
-    name: "Augusta National",
-    location: "Augusta, Georgia",
-    description: "Home of The Masters, considered the most prestigious golf tournament in the world. Azaleas, Amen Corner, and unforgettable history.",
-    image: "https://images.unsplash.com/photo-1742498626081-a64f9677f468?w=800&q=80&auto=format&fit=crop",
-  },
-  {
-    name: "Pebble Beach Golf Links",
-    location: "Pebble Beach, California",
-    description: "The most famous public golf course in America, carved into the dramatic California coastline. Every hole a postcard.",
-    image: "https://images.unsplash.com/photo-1561066030-f096e3ba23dd?w=800&q=80&auto=format&fit=crop",
-  },
-  {
-    name: "St Andrews Old Course",
-    location: "Fife, Scotland",
-    description: "The birthplace of golf. Walk the same fairways as legends dating back to 1552. The 18th hole is unlike anything in the world.",
-    image: "https://images.unsplash.com/photo-1687291134396-304d837a1d65?w=800&q=80&auto=format&fit=crop",
-  },
-  {
-    name: "Indian Wells Golf Resort",
-    location: "Indian Wells, California",
-    description: "Two championship desert courses set beneath the Santa Rosa Mountains in Palm Springs. Year-round sunshine and immaculate conditions.",
-    image: "https://images.unsplash.com/photo-1671904942522-8e2a0dbb709f?w=800&q=80&auto=format&fit=crop",
-  },
+{
+name: "Augusta National",
+location: "Augusta, Georgia",
+description: "Home of The Masters, considered the most prestigious golf tournament in the world. Azaleas, Amen Corner, and unforgettable history.",
+image: "https://images.unsplash.com/photo-1742498626081-a64f9677f468?w=800&q=80&auto=format&fit=crop",
+},
+{
+name: "Pebble Beach Golf Links",
+location: "Pebble Beach, California",
+description: "The most famous public golf course in America, carved into the dramatic California coastline. Every hole a postcard.",
+image: "https://images.pexels.com/photos/37727304/pexels-photo-37727304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+},
+{
+name: "St Andrews Old Course",
+location: "Fife, Scotland",
+description: "The birthplace of golf. Walk the same fairways as legends dating back to 1552. The 18th hole is unlike anything in the world.",
+image: "https://images.unsplash.com/photo-1687291134396-304d837a1d65?w=800&q=80&auto=format&fit=crop",
+},
+{
+name: "TPC Sawgrass",
+location: "Ponte Vedra Beach, Florida",
+description: "Home of The Players Championship and the most nerve-wracking par-3 in golf: the 17th island green, surrounded by water on all sides.",
+image: "https://images.pexels.com/photos/8454463/pexels-photo-8454463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+},
+{
+name: "Pinehurst No. 2",
+location: "Pinehurst, North Carolina",
+description: "Donald Ross's masterpiece. Rolling turtle-back greens and sandy waste areas have tested the world's best since 1907. Seven US Open championships.",
+image: "https://images.pexels.com/photos/14869687/pexels-photo-14869687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+},
+{
+name: "Indian Wells Golf Resort",
+location: "Indian Wells, California",
+description: "Two championship desert courses set beneath the Santa Rosa Mountains in Palm Springs. Year-round sunshine and immaculate conditions.",
+image: "https://images.unsplash.com/photo-1671904942522-8e2a0dbb709f?w=800&q=80&auto=format&fit=crop",
+},
 ];
 ---
 <BaseLayout title="Golf Tech & Gear Reviews" description="Honest reviews of golf tech and gear — GPS watches, rangefinders, launch monitors, and simulator setups to help you play better.">
-  <Header slot="header" />
+<Header slot="header" />
 
-  <!-- Hero Carousel -->
-  <section class="hero-carousel">
-    {courses.map((course, i) => (
-      <div class={`carousel-slide${i === 0 ? ' active' : ''}`} data-index={i} style={`background-image: url('${course.image}')`}>
-      </div>
-    ))}
-    <div class="carousel-overlay"></div>
-    <div class="hero-content container">
-      <div class="hero-badge">Golf Tech Reviews</div>
-      <h1>The gear that actually improves your game</h1>
-      <p>Honest, no-fluff reviews of GPS watches, rangefinders, launch monitors, and simulator setups. We cut through the marketing so you buy the right thing.</p>
-      <a href="/articles" class="btn-primary">Browse all reviews →</a>
-    </div>
-    <div class="carousel-meta">
-      <span class="carousel-course-name">{courses[0].name}</span>
-      <span class="carousel-course-location">{courses[0].location}</span>
-    </div>
-    <div class="carousel-dots">
-      {courses.map((_, i) => (
-        <button class={`dot${i === 0 ? ' active' : ''}`} data-dot={i} aria-label={`Slide ${i + 1}`}></button>
-      ))}
-    </div>
-  </section>
+<!-- Hero Carousel -->
+<section class="hero-carousel">
+{courses.map((course, i) => (
+<div class={`carousel-slide${i === 0 ? ' active' : ''}`} data-index={i} style={`background-image: url('${course.image}')`}>
+</div>
+))}
+<div class="carousel-overlay"></div>
+<div class="hero-content container">
+<div class="hero-badge">Golf Tech Reviews</div>
+<h1>The gear that actually improves your game</h1>
+<p>Honest, no-fluff reviews of GPS watches, rangefinders, launch monitors, and simulator setups. We cut through the marketing so you buy the right thing.</p>
+<a href="/articles" class="btn-primary">Browse all reviews →</a>
+</div>
+<div class="carousel-meta">
+<span class="carousel-course-name">{courses[0].name}</span>
+<span class="carousel-course-location">{courses[0].location}</span>
+</div>
+<div class="carousel-dots">
+{courses.map((_, i) => (
+<button class={`dot${i === 0 ? ' active' : ''}`} data-dot={i} aria-label={`Slide ${i + 1}`}></button>
+))}
+</div>
+</section>
 
-  <script define:vars={{ courses }}>
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
-    const nameEl = document.querySelector('.carousel-course-name');
-    const locEl = document.querySelector('.carousel-course-location');
-    let current = 0;
-    let timer;
+<script define:vars={{ courses }}>
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+const nameEl = document.querySelector('.carousel-course-name');
+const locEl = document.querySelector('.carousel-course-location');
+let current = 0;
+let timer;
 
-    function goTo(n) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = (n + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
-      nameEl.textContent = courses[current].name;
-      locEl.textContent = courses[current].location;
-    }
+function goTo(n) {
+slides[current].classList.remove('active');
+dots[current].classList.remove('active');
+current = (n + slides.length) % slides.length;
+slides[current].classList.add('active');
+dots[current].classList.add('active');
+nameEl.textContent = courses[current].name;
+locEl.textContent = courses[current].location;
+}
 
-    function startTimer() {
-      timer = setInterval(() => goTo(current + 1), 5000);
-    }
+function startTimer() {
+timer = setInterval(() => goTo(current + 1), 5000);
+}
 
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        clearInterval(timer);
-        goTo(i);
-        startTimer();
-      });
-    });
+dots.forEach((dot, i) => {
+dot.addEventListener('click', () => {
+clearInterval(timer);
+goTo(i);
+startTimer();
+});
+});
 
-    startTimer();
-  </script>
+startTimer();
+</script>
 
-  <!-- Categories -->
-  <section class="categories">
-    <div class="container">
-      <h2 class="section-title">Browse by category</h2>
-      <div class="categories-grid">
-        {categories.map(cat => (
-          <a href={`/articles?category=${cat.slug}`} class="category-card">
-            <span class="cat-icon">{cat.icon}</span>
-            <span class="cat-name">{cat.name}</span>
-            <span class="cat-desc">{cat.desc}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+<!-- Categories -->
+<section class="categories">
+<div class="container">
+<h2 class="section-title">Browse by category</h2>
+<div class="categories-grid">
+{categories.map(cat => (
+<a href={`/articles?category=${cat.slug}`} class="category-card">
+<span class="cat-icon">{cat.icon}</span>
+<span class="cat-name">{cat.name}</span>
+<span class="cat-desc">{cat.desc}</span>
+</a>
+))}
+</div>
+</div>
+</section>
 
-  <!-- Featured Articles -->
-  {featuredArticles.length > 0 && (
-    <section class="articles-section">
-      <div class="container">
-        <h2 class="section-title">Featured Reviews</h2>
-        <div class="articles-grid">
-          {featuredArticles.map(article => (
-            <ArticleCard
-              title={article.data.title}
-              description={article.data.description}
-              slug={article.slug}
-              category={article.data.category}
-              pubDate={article.data.pubDate}
-              featured={true}
-              image={article.data.image}
-              imageAlt={article.data.imageAlt}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
+<!-- Featured Articles -->
+{featuredArticles.length > 0 && (
+<section class="articles-section">
+<div class="container">
+<h2 class="section-title">Featured Reviews</h2>
+<div class="articles-grid">
+{featuredArticles.map(article => (
+<ArticleCard
+title={article.data.title}
+description={article.data.description}
+slug={article.slug}
+category={article.data.category}
+pubDate={article.data.pubDate}
+featured={true}
+image={article.data.image}
+imageAlt={article.data.imageAlt}
+/>
+))}
+</div>
+</div>
+</section>
+)}
 
-  <!-- Recent Articles -->
-  {recentArticles.length > 0 && (
-    <section class="articles-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Latest Reviews</h2>
-          <a href="/articles" class="view-all">View all →</a>
-        </div>
-        <div class="articles-grid">
-          {recentArticles.map(article => (
-            <ArticleCard
-              title={article.data.title}
-              description={article.data.description}
-              slug={article.slug}
-              category={article.data.category}
-              pubDate={article.data.pubDate}
-              image={article.data.image}
-              imageAlt={article.data.imageAlt}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
+<!-- Recent Articles -->
+{recentArticles.length > 0 && (
+<section class="articles-section">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Latest Reviews</h2>
+<a href="/articles" class="view-all">View all →</a>
+</div>
+<div class="articles-grid">
+{recentArticles.map(article => (
+<ArticleCard
+title={article.data.title}
+description={article.data.description}
+slug={article.slug}
+category={article.data.category}
+pubDate={article.data.pubDate}
+image={article.data.image}
+imageAlt={article.data.imageAlt}
+/>
+))}
+</div>
+</div>
+</section>
+)}
 
-  <!-- Email Capture -->
-  <section class="email-section">
-    <div class="container">
-      <div class="email-inner">
-        <div class="email-text">
-          <h2>New reviews, straight to your inbox</h2>
-          <p>No fluff, no spam. Just honest gear reviews when we publish them — once or twice a month.</p>
-        </div>
-        <form class="email-form" action="https://buttondown.email/api/emails/embed-subscribe/formxgolf" method="post" target="_blank">
-          <input type="email" name="email" placeholder="your@email.com" required />
-          <button type="submit">Subscribe →</button>
-        </form>
-      </div>
-    </div>
-  </section>
+<!-- Email Capture -->
+<section class="email-section">
+<div class="container">
+<div class="email-inner">
+<div class="email-text">
+<h2>New reviews, straight to your inbox</h2>
+<p>No fluff, no spam. Just honest gear reviews when we publish them — once or twice a month.</p>
+</div>
+<form class="email-form" action="https://buttondown.email/api/emails/embed-subscribe/formxgolf" method="post" target="_blank">
+<input type="email" name="email" placeholder="your@email.com" required />
+<button type="submit">Subscribe →</button>
+</form>
+</div>
+</div>
+</section>
 
-  <!-- CTA Banner -->
-  <section class="cta-banner">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Not sure where to start?</h2>
-        <p>If you only read one thing, read our guide to the best GPS watches — it covers every price point and will save you from a bad purchase.</p>
-        <a href="/articles/best-golf-gps-watches-2026" class="btn-primary">Read the GPS watch guide →</a>
-      </div>
-    </div>
-  </section>
+<!-- CTA Banner -->
+<section class="cta-banner">
+<div class="container">
+<div class="cta-content">
+<h2>Not sure where to start?</h2>
+<p>If you only read one thing, read our guide to the best GPS watches — it covers every price point and will save you from a bad purchase.</p>
+<a href="/articles/best-golf-gps-watches-2026" class="btn-primary">Read the GPS watch guide →</a>
+</div>
+</div>
+</section>
 
-  <Footer slot="footer" />
+<Footer slot="footer" />
 </BaseLayout>
 
 <style>
-  /* Carousel Hero */
-  .hero-carousel {
-    position: relative;
-    height: 560px;
-    overflow: hidden;
-    color: #fff;
-  }
-  .carousel-slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease;
-  }
-  .carousel-slide.active { opacity: 1; }
-  .carousel-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%);
-    z-index: 1;
-  }
-  .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 0; right: 0;
-    transform: translateY(-50%);
-    z-index: 2;
-  }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.35);
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 0.3rem 0.85rem;
-    border-radius: 20px;
-    margin-bottom: 1.1rem;
-  }
-  .hero-content h1 {
-    font-size: clamp(2rem, 4.5vw, 3rem);
-    font-weight: 800;
-    max-width: 600px;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  }
-  .hero-content p {
-    font-size: 1.05rem;
-    max-width: 520px;
-    opacity: 0.9;
-    margin-bottom: 2rem;
-    line-height: 1.7;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
-  }
-  .carousel-meta {
-    position: absolute;
-    bottom: 3.5rem;
-    right: 2rem;
-    z-index: 2;
-    text-align: right;
-  }
-  .carousel-course-name {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-    letter-spacing: 0.5px;
-  }
-  .carousel-course-location {
-    display: block;
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.75);
-    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-  }
-  .carousel-dots {
-    position: absolute;
-    bottom: 1.25rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    gap: 0.5rem;
-  }
-  .dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.4);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.3s, transform 0.3s;
-  }
-  .dot.active { background: #fff; transform: scale(1.3); }
-  .btn-primary {
-    display: inline-block;
-    background: #F9A825;
-    color: #111;
-    padding: 0.8rem 1.75rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .btn-primary:hover { background: #F57F17; transform: translateY(-1px); }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+/* Carousel Hero */
+.hero-carousel {
+position: relative;
+height: 560px;
+overflow: hidden;
+color: #fff;
+}
+.carousel-slide {
+position: absolute;
+inset: 0;
+background-size: cover;
+background-position: center;
+opacity: 0;
+transition: opacity 1s ease;
+}
+.carousel-slide.active { opacity: 1; }
+.carousel-overlay {
+position: absolute;
+inset: 0;
+background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%);
+z-index: 1;
+}
+.hero-content {
+position: absolute;
+top: 50%;
+left: 0; right: 0;
+transform: translateY(-50%);
+z-index: 2;
+}
+.hero-badge {
+display: inline-block;
+background: rgba(255,255,255,0.15);
+border: 1px solid rgba(255,255,255,0.35);
+color: #fff;
+font-size: 0.72rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+padding: 0.3rem 0.85rem;
+border-radius: 20px;
+margin-bottom: 1.1rem;
+}
+.hero-content h1 {
+font-size: clamp(2rem, 4.5vw, 3rem);
+font-weight: 800;
+max-width: 600px;
+margin-bottom: 1rem;
+line-height: 1.2;
+text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.hero-content p {
+font-size: 1.05rem;
+max-width: 520px;
+opacity: 0.9;
+margin-bottom: 2rem;
+line-height: 1.7;
+text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.carousel-meta {
+position: absolute;
+bottom: 3.5rem;
+right: 2rem;
+z-index: 2;
+text-align: right;
+}
+.carousel-course-name {
+display: block;
+font-size: 0.85rem;
+font-weight: 700;
+color: #fff;
+text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+letter-spacing: 0.5px;
+}
+.carousel-course-location {
+display: block;
+font-size: 0.75rem;
+color: rgba(255,255,255,0.75);
+text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.carousel-dots {
+position: absolute;
+bottom: 1.25rem;
+left: 50%;
+transform: translateX(-50%);
+z-index: 2;
+display: flex;
+gap: 0.5rem;
+}
+.dot {
+width: 8px; height: 8px;
+border-radius: 50%;
+background: rgba(255,255,255,0.4);
+border: none;
+cursor: pointer;
+padding: 0;
+transition: background 0.3s, transform 0.3s;
+}
+.dot.active { background: #fff; transform: scale(1.3); }
+.btn-primary {
+display: inline-block;
+background: #F9A825;
+color: #111;
+padding: 0.8rem 1.75rem;
+border-radius: 6px;
+text-decoration: none;
+font-weight: 700;
+font-size: 0.95rem;
+transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: #F57F17; transform: translateY(-1px); }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-  /* Categories */
-  .categories { padding: 4rem 0 1rem; }
-  .section-title { font-size: 1.5rem; font-weight: 800; color: #111; margin-bottom: 1.5rem; }
-  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-  .view-all { font-size: 0.9rem; font-weight: 600; color: #1B5E20; text-decoration: none; }
-  .categories-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-  .category-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.3rem;
-    padding: 1.25rem;
-    background: #fff;
-    border: 1px solid #e8e8e8;
-    border-radius: 10px;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .category-card:hover { border-color: #1B5E20; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-  .cat-icon { font-size: 1.5rem; }
-  .cat-name { font-weight: 700; font-size: 0.95rem; color: #111; }
-  .cat-desc { font-size: 0.82rem; color: #777; }
+/* Categories */
+.categories { padding: 4rem 0 1rem; }
+.section-title { font-size: 1.5rem; font-weight: 800; color: #111; margin-bottom: 1.5rem; }
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.view-all { font-size: 0.9rem; font-weight: 600; color: #1B5E20; text-decoration: none; }
+.categories-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.category-card {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 0.3rem;
+padding: 1.25rem;
+background: #fff;
+border: 1px solid #e8e8e8;
+border-radius: 10px;
+text-decoration: none;
+color: inherit;
+transition: border-color 0.2s, box-shadow 0.2s;
+}
+.category-card:hover { border-color: #1B5E20; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+.cat-icon { font-size: 1.5rem; }
+.cat-name { font-weight: 700; font-size: 0.95rem; color: #111; }
+.cat-desc { font-size: 0.82rem; color: #777; }
 
-  /* Articles */
-  .articles-section { padding: 3rem 0; }
-  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+/* Articles */
+.articles-section { padding: 3rem 0; }
+.articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 
-  /* Email Capture */
-  .email-section { background: #1B5E20; padding: 3.5rem 0; }
-  .email-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-  .email-text h2 { font-size: 1.4rem; font-weight: 800; color: #fff; margin: 0 0 0.4rem; }
-  .email-text p { font-size: 0.95rem; color: rgba(255,255,255,0.8); margin: 0; }
-  .email-form { display: flex; gap: 0.5rem; flex-shrink: 0; }
-  .email-form input[type="email"] {
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    border: none;
-    font-size: 0.95rem;
-    width: 260px;
-    outline: none;
-  }
-  .email-form button {
-    padding: 0.75rem 1.25rem;
-    background: #F9A825;
-    color: #111;
-    border: none;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s;
-  }
-  .email-form button:hover { background: #F57F17; }
-  @media (max-width: 700px) {
-    .email-inner { flex-direction: column; align-items: flex-start; }
-    .email-form { width: 100%; }
-    .email-form input[type="email"] { flex: 1; width: auto; }
-  }
+/* Email Capture */
+.email-section { background: #1B5E20; padding: 3.5rem 0; }
+.email-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.email-text h2 { font-size: 1.4rem; font-weight: 800; color: #fff; margin: 0 0 0.4rem; }
+.email-text p { font-size: 0.95rem; color: rgba(255,255,255,0.8); margin: 0; }
+.email-form { display: flex; gap: 0.5rem; flex-shrink: 0; }
+.email-form input[type="email"] {
+padding: 0.75rem 1rem;
+border-radius: 6px;
+border: none;
+font-size: 0.95rem;
+width: 260px;
+outline: none;
+}
+.email-form button {
+padding: 0.75rem 1.25rem;
+background: #F9A825;
+color: #111;
+border: none;
+border-radius: 6px;
+font-weight: 700;
+font-size: 0.9rem;
+cursor: pointer;
+white-space: nowrap;
+transition: background 0.2s;
+}
+.email-form button:hover { background: #F57F17; }
+@media (max-width: 700px) {
+.email-inner { flex-direction: column; align-items: flex-start; }
+.email-form { width: 100%; }
+.email-form input[type="email"] { flex: 1; width: auto; }
+}
 
-  /* CTA Banner */
-  .cta-banner { background: #E8F5E9; padding: 4rem 0; margin-top: 2rem; }
-  .cta-content { max-width: 600px; }
-  .cta-content h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.75rem; color: #1B5E20; }
-  .cta-content p { color: #444; margin-bottom: 1.5rem; line-height: 1.7; }
+/* CTA Banner */
+.cta-banner { background: #E8F5E9; padding: 4rem 0; margin-top: 2rem; }
+.cta-content { max-width: 600px; }
+.cta-content h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.75rem; color: #1B5E20; }
+.cta-content p { color: #444; margin-bottom: 1.5rem; line-height: 1.7; }
 
-  @media (max-width: 900px) {
-    .articles-grid { grid-template-columns: repeat(2, 1fr); }
-    .categories-grid { grid-template-columns: repeat(2, 1fr); }
-    .hero-carousel { height: 480px; }
-  }
-  @media (max-width: 600px) {
-    .articles-grid { grid-template-columns: 1fr; }
-    .categories-grid { grid-template-columns: 1fr 1fr; }
-    .hero-carousel { height: 420px; }
-    .hero-content h1 { font-size: 1.7rem; }
-    .carousel-meta { display: none; }
-  }
+@media (max-width: 900px) {
+.articles-grid { grid-template-columns: repeat(2, 1fr); }
+.categories-grid { grid-template-columns: repeat(2, 1fr); }
+.hero-carousel { height: 480px; }
+}
+@media (max-width: 600px) {
+.articles-grid { grid-template-columns: 1fr; }
+.categories-grid { grid-template-columns: 1fr 1fr; }
+.hero-carousel { height: 420px; }
+.hero-content h1 { font-size: 1.7rem; }
+.carousel-meta { display: none; }
+}
 </style>
