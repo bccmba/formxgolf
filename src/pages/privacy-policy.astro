@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Privacy Policy | FormX Golf" description="FormX Golf privacy policy — how we collect, use, and protect your information.">
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+    </div>
+  </section>
+
+  <section class="policy-content">
+    <div class="container">
+      <div class="prose">
+        <p><strong>Last updated: June 2026</strong></p>
+        <p>This Privacy Policy describes how FormX Golf collects, uses, and shares information when you visit formxgolf.com. By using the Site, you agree to the practices described in this policy.</p>
+        <h2>Information We Collect</h2>
+        <h3>Information you provide</h3>
+        <p>When you subscribe to our email newsletter, we collect your email address. We use this solely to send you updates about new reviews and content. We do not sell your email address to third parties.</p>
+        <h3>Information collected automatically</h3>
+        <p>We automatically collect certain information when you visit, including your IP address, browser type, and pages viewed. We use Google Analytics to understand how visitors use the Site.</p>
+        <h2>Cookies</h2>
+        <p>The Site uses cookies primarily through Google Analytics. You can disable cookies in your browser settings. We do not use cookies to serve advertising.</p>
+        <h2>Affiliate Links</h2>
+        <p>FormX Golf participates in affiliate programs including Amazon Associates. When you click an affiliate link and make a purchase, we may earn a commission. See our <a href="/affiliate-disclosure">Affiliate Disclosure</a> for full details.</p>
+        <h2>Third-Party Links</h2>
+        <p>The Site contains links to third-party websites. We are not responsible for the privacy practices of those sites.</p>
+        <h2>How We Use Your Information</h2>
+        <p>We use information we collect to operate and improve the Site, send newsletter emails, and analyze traffic. We do not sell your personal information.</p>
+        <h2>Email Communications</h2>
+        <p>You can unsubscribe from our newsletter at any time by clicking the unsubscribe link in any email we send.</p>
+        <h2>Children's Privacy</h2>
+        <p>The Site is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Your continued use of the Site after any changes constitutes acceptance of the updated policy.</p>
+        <h2>Contact</h2>
+        <p>Questions? Contact us at <a href="mailto:hello@formxgolf.com">hello@formxgolf.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-header { background: #1B5E20; padding: 3rem 0; color: #fff; }
+  .page-header h1 { font-size: 2.2rem; font-weight: 800; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .policy-content { padding: 4rem 0; }
+  .prose h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 0.75rem; color: #1B5E20; }
+  .prose h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #333; }
+  .prose p { margin-bottom: 1rem; line-height: 1.7; color: #444; }
+  .prose a { color: #1B5E20; }
+</style>
