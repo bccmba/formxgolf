@@ -4,8 +4,8 @@ description: "You don't need to spend $400 to get accurate yardages. These sub-$
 pubDate: "2026-06-11"
 category: "Rangefinders"
 featured: false
-image: "https://images.pexels.com/photos/6256840/pexels-photo-6256840.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-imageAlt: "Golfer standing near a golf ball on the course, surveying the fairway ahead"
+image: "https://images.pexels.com/photos/6255518/pexels-photo-6255518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+imageAlt: "Golfer using a laser rangefinder to measure distance to the pin"
 ---
 
 *Affiliate disclosure: This article contains affiliate links. If you buy through our links, we may earn a commission at no extra cost to you. [Full disclosure ->](/affiliate-disclosure)*
@@ -34,10 +34,7 @@ Here are the best golf rangefinders under $200 in 2026.
 
 ## 1. Bushnell Tour V5 -- Best Overall
 
-<figure>
-<img src="https://m.media-amazon.com/images/I/71R4LBHVFNL._SL1500_.jpg" alt="Bushnell Tour V5 Golf Rangefinder" />
-<figcaption>Bushnell Tour V5 -- PinSeeker with JOLT vibration, the most trusted name in golf rangefinders</figcaption>
-</figure>
+**Bushnell Tour V5** — PinSeeker with JOLT vibration, the most trusted name in golf rangefinders
 
 If you're going to spend close to $200, spend it on the Bushnell Tour V5. This is essentially the Tour V6's predecessor with the same core technology -- PinSeeker targeting with JOLT vibration feedback -- at a price that keeps it within our ceiling.
 
@@ -68,10 +65,7 @@ The JOLT feature is the reason Bushnell dominates this market. When your rangefi
 
 ## 2. Precision Pro NX9 -- Best Slope Value
 
-<figure>
-<img src="https://m.media-amazon.com/images/I/71-bwEzM0kL._SL1500_.jpg" alt="Precision Pro NX9 HD Golf Rangefinder" />
-<figcaption>Precision Pro NX9 HD -- slope mode, adaptive slope technology, US-based customer service</figcaption>
-</figure>
+**Precision Pro NX9 HD** — slope mode, adaptive slope technology, US-based customer service
 
 Precision Pro is an American company that has quietly built a loyal following in the golf rangefinder market by making genuinely good devices at prices well below Bushnell and Garmin -- and backing them with excellent customer service.
 
@@ -100,10 +94,7 @@ The NX9 HD at ~$179 includes slope mode with an adaptive slope calculator that a
 
 ## 3. Callaway 300 Pro -- Best Name-Brand Budget Option
 
-<figure>
-<img src="https://m.media-amazon.com/images/I/71JFB1qAZ6L._SL1500_.jpg" alt="Callaway 300 Pro Golf Rangefinder" />
-<figcaption>Callaway 300 Pro -- slope compensation, pin acquisition technology, trusted brand at a low price</figcaption>
-</figure>
+**Callaway 300 Pro** — slope compensation, pin acquisition technology, trusted brand at a low price
 
 The Callaway 300 Pro at ~$149 is the best option if you want a name you recognize on the device at a price well under $200. It includes slope mode with a legal toggle, flag-locking technology, and Pin Acquisition Technology (PAT) for flag confirmation.
 
@@ -117,10 +108,7 @@ Build quality is solid, and the Callaway brand comes with reasonable confidence 
 
 ## 4. TecTecTec VPRO500 -- Best Under $100
 
-<figure>
-<img src="https://m.media-amazon.com/images/I/71q4MNwv+VL._SL1500_.jpg" alt="TecTecTec VPRO500 Golf Rangefinder" />
-<figcaption>TecTecTec VPRO500 -- accurate, waterproof, simple, under $100</figcaption>
-</figure>
+**TecTecTec VPRO500** — accurate, waterproof, simple, under $100
 
 TecTecTec is a French brand that cracked the US market by building a competent rangefinder and selling it at aggressively low prices. The VPRO500 at ~$99 has been one of the best-selling rangefinders on Amazon for years -- and for good reason.
 
