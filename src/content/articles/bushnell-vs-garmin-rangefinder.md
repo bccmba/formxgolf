@@ -4,8 +4,8 @@ description: "Bushnell and Garmin dominate the golf rangefinder market. We break
 pubDate: "2026-06-11"
 category: "Rangefinders"
 featured: false
-image: "https://images.pexels.com/photos/9366518/pexels-photo-9366518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-imageAlt: "Golfer on a fairway preparing to take a shot on a sunny day"
+image: "https://images.pexels.com/photos/6255517/pexels-photo-6255517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+imageAlt: "Close-up of a golf rangefinder being aimed at a flagstick"
 ---
 
 *Affiliate disclosure: This article contains affiliate links. If you buy through our links, we may earn a commission at no extra cost to you. [Full disclosure ->](/affiliate-disclosure)*
@@ -24,15 +24,9 @@ Here's a direct comparison.
 
 For this comparison, we're focusing on the most popular models in each lineup: the **Bushnell Tour V6 Shift** and the **Garmin Approach Z82**. These represent the flagship offerings from each brand -- the ones serious golfers actually buy.
 
-<figure>
-<img src="https://m.media-amazon.com/images/I/71c7J1wSzHL._SL1500_.jpg" alt="Bushnell Tour V6 Shift Golf Rangefinder" />
-<figcaption>Bushnell Tour V6 Shift -- PinSeeker with JOLT technology, slope-adjusted distances</figcaption>
-</figure>
+**Bushnell Tour V6 Shift** — PinSeeker with JOLT technology, slope-adjusted distances
 
-<figure>
-<img src="https://m.media-amazon.com/images/I/71N-F7wFMFL._SL1500_.jpg" alt="Garmin Approach Z82 Golf Rangefinder" />
-<figcaption>Garmin Approach Z82 -- GPS overlay, hazard distances, course mapping built in</figcaption>
-</figure>
+**Garmin Approach Z82** — GPS overlay, hazard distances, course mapping built in
 
 ---
 
@@ -96,6 +90,7 @@ Bushnell has been making optics for decades and it shows. The Tour V6 Shift has 
 The Garmin Z82 uses a 6x magnification lens with the GPS overlay displayed in the viewfinder. The overlay is useful, but it requires a slightly more complex optical path. In direct sunlight, both units are clear -- but in low light or overcast conditions, Bushnell's pure optical path has a small advantage.
 
 **Winner: Bushnell** -- cleaner optical path, sharper image without overlay clutter.
+
 ---
 
 ## Price
@@ -119,9 +114,9 @@ If budget is a concern, both brands have excellent options in the $200-$300 rang
 
 **Bushnell Tour V5 Shift** (~$250): Nearly identical to the V6 with JOLT and slope mode, just without some minor optical refinements. Excellent value.
 
-**Garmin Approach Z30** (~I250): GPS laser combo without the full course overlay of the Z82, but still gives you front/center/back green distances alongside the laser. A smart mid-range choice.
+**Garmin Approach Z30** (~$250): GPS laser combo without the full course overlay of the Z82, but still gives you front/center/back green distances alongside the laser. A smart mid-range choice.
 
-[Check Bushnell Tour V5 Shift ->](https://www.amazon.com/s?k=bushnell+tour+v5+sthift&tag=formxgolf-20)
+[Check Bushnell Tour V5 Shift ->](https://www.amazon.com/s?k=bushnell+tour+v5+shift&tag=formxgolf-20)
 
 [Check Garmin Approach Z30 ->](https://www.amazon.com/s?k=garmin+approach+z30&tag=formxgolf-20)
 
